@@ -1,28 +1,61 @@
 ---
 layout: default
-title: Šiukšlių išvežimo grafikas
+title: Tvarkaraščiai
 ---
 <section class="section">
-  <h1>Šiukšlių išvežimo grafikas</h1>
-  {% assign irasai = site.data.tvarkarastis.irasai %}
-  {% if irasai.size > 0 %}
+  <h1>Šiukšlių išvežimo grafikas {{ site.data.tvarkarastis.siuksliu_metai }} m.</h1>
   <table class="schedule-table">
     <thead>
       <tr>
-        <th>Atliekų rūšis</th>
-        <th>Išvežimo grafikas</th>
+        <th>Mėnuo</th>
+        <th>Mišrios rūšiuojamos</th>
+        <th>Stiklas</th>
+        <th>Žaliosios</th>
       </tr>
     </thead>
     <tbody>
-      {% for row in irasai %}
+      {% for m in site.data.tvarkarastis.siuksliu_menesiai %}
       <tr>
-        <td>{{ row.atlieku_rusis }}</td>
-        <td>{{ row.grafikas }}</td>
+        <td>{{ m.menuo }}</td>
+        <td>{{ m.misrios }}</td>
+        <td>{{ m.stiklas }}</td>
+        <td>{{ m.zaliosios }}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  {% else %}
-  <p class="empty-note">Grafikas dar nesuvestas.</p>
+  {% if site.data.tvarkarastis.siuksliu_pastabos %}
+  <ul class="schedule-notes">
+    {% for p in site.data.tvarkarastis.siuksliu_pastabos %}
+    <li>{{ p }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>
+
+<section class="section section--alt">
+  <h1>Vandens tiekimo laistymui grafikas</h1>
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Diena</th>
+        <th>Laikas</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in site.data.tvarkarastis.vandens_dienos %}
+      <tr>
+        <td>{{ d.diena }}</td>
+        <td>{{ d.laikas }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% if site.data.tvarkarastis.vandens_pastabos %}
+  <ul class="schedule-notes">
+    {% for p in site.data.tvarkarastis.vandens_pastabos %}
+    <li>{{ p }}</li>
+    {% endfor %}
+  </ul>
   {% endif %}
 </section>

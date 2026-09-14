@@ -8,6 +8,9 @@ title: Kontaktai
   <h2>Valdybos pirmininkas</h2>
   <p>{{ site.data.kontaktai.pirmininkas }}</p>
 
+  <h2>Buveinės adresas</h2>
+  <p>{{ site.data.kontaktai.adresas }}</p>
+
   <h2>Valdyba</h2>
   <p>
     {% for narys in site.data.kontaktai.valdyba %}{{ narys }}<br>{% endfor %}
@@ -15,6 +18,9 @@ title: Kontaktai
 
   <h2>Buhalterė</h2>
   <p>Mob. tel. {{ site.data.kontaktai.buhaltere_tel }}</p>
+
+  <h2>Mokestinių lapų atsiėmimas</h2>
+  <p>{{ site.data.kontaktai.mokestiniai_lapai }}</p>
 
   <h2>Santechnikas</h2>
   <p>Mob. tel. {{ site.data.kontaktai.santechnikas_tel }}</p>

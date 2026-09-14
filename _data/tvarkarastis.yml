@@ -1,9 +1,29 @@
-irasai:
-  - atlieku_rusis: "Mišrios komunalinės atliekos"
-    grafikas: "Kas antrą trečiadienį"
-  - atlieku_rusis: "Popierius ir kartonas"
-    grafikas: "Kiekvieno mėnesio pirmą penktadienį"
-  - atlieku_rusis: "Plastikas ir pakuotės"
-    grafikas: "Kiekvieno mėnesio trečią penktadienį"
-  - atlieku_rusis: "Stiklas"
-    grafikas: "Kartą per ketvirtį"
+siuksliu_metai: "2026"
+siuksliu_pastabos:
+  - "Konteinerius išvežti iš vakaro."
+  - "Žaliosios atliekos maišais nebebus vežamos."
+siuksliu_menesiai:
+  - { menuo: "Sausis", misrios: "1, 15, 29", stiklas: "", zaliosios: "" }
+  - { menuo: "Vasaris", misrios: "12, 26", stiklas: "5", zaliosios: "" }
+  - { menuo: "Kovas", misrios: "12, 26", stiklas: "", zaliosios: "" }
+  - { menuo: "Balandis", misrios: "9, 23", stiklas: "30", zaliosios: "18, 29" }
+  - { menuo: "Gegužė", misrios: "7, 21", stiklas: "", zaliosios: "29" }
+  - { menuo: "Birželis", misrios: "4, 18", stiklas: "", zaliosios: "29" }
+  - { menuo: "Liepa", misrios: "2, 16, 30", stiklas: "23", zaliosios: "29" }
+  - { menuo: "Rugpjūtis", misrios: "13, 27", stiklas: "", zaliosios: "29" }
+  - { menuo: "Rugsėjis", misrios: "10, 24", stiklas: "", zaliosios: "29" }
+  - { menuo: "Spalis", misrios: "8, 22", stiklas: "15", zaliosios: "29" }
+  - { menuo: "Lapkritis", misrios: "5, 19", stiklas: "", zaliosios: "15, 29" }
+  - { menuo: "Gruodis", misrios: "3, 17", stiklas: "", zaliosios: "" }
+
+vandens_pastabos:
+  - "Esant lietingam orui arba gedimams, vanduo laistymui netiekiamas."
+  - "Draudžiama palikinėti čiaupus atsuktus."
+vandens_dienos:
+  - { diena: "Pirmadienis", laikas: "Netiekiama" }
+  - { diena: "Antradienis", laikas: "10–12 val." }
+  - { diena: "Trečiadienis", laikas: "17–19 val." }
+  - { diena: "Ketvirtadienis", laikas: "10–12 val." }
+  - { diena: "Penktadienis", laikas: "17–19 val." }
+  - { diena: "Šeštadienis", laikas: "10–13 val." }
+  - { diena: "Sekmadienis", laikas: "10–12 val." }

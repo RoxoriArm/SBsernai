@@ -33,18 +33,35 @@ collections:
       - { label: "Aprašymas", name: "body", widget: "markdown" }
 
   - name: "tvarkarastis"
-    label: "Šiukšlių grafikas"
+    label: "Tvarkaraščiai"
     files:
       - name: "grafikas"
-        label: "Grafikas"
+        label: "Šiukšlių ir vandens grafikai"
         file: "_data/tvarkarastis.yml"
         fields:
-          - label: "Eilutės"
-            name: "irasai"
+          - { label: "Šiukšlių grafiko metai", name: "siuksliu_metai", widget: "string" }
+          - label: "Šiukšlių grafiko pastabos"
+            name: "siuksliu_pastabos"
+            widget: "list"
+            field: { label: "Pastaba", name: "pastaba", widget: "string" }
+          - label: "Šiukšlių išvežimo mėnesiai"
+            name: "siuksliu_menesiai"
             widget: "list"
             fields:
-              - { label: "Atliekų rūšis", name: "atlieku_rusis", widget: "string" }
-              - { label: "Grafikas", name: "grafikas", widget: "string" }
+              - { label: "Mėnuo", name: "menuo", widget: "string" }
+              - { label: "Mišrios rūšiuojamos (dienos)", name: "misrios", widget: "string", required: false }
+              - { label: "Stiklas (dienos)", name: "stiklas", widget: "string", required: false }
+              - { label: "Žaliosios (dienos)", name: "zaliosios", widget: "string", required: false }
+          - label: "Vandens tiekimo pastabos"
+            name: "vandens_pastabos"
+            widget: "list"
+            field: { label: "Pastaba", name: "pastaba", widget: "string" }
+          - label: "Vandens tiekimo dienos"
+            name: "vandens_dienos"
+            widget: "list"
+            fields:
+              - { label: "Savaitės diena", name: "diena", widget: "string" }
+              - { label: "Laikas", name: "laikas", widget: "string" }
 
   - name: "dokumentai"
     label: "Dokumentai"
@@ -73,11 +90,13 @@ collections:
         file: "_data/kontaktai.yml"
         fields:
           - { label: "Pirmininkas (vardas ir telefonas)", name: "pirmininkas", widget: "string" }
+          - { label: "Buveinės adresas", name: "adresas", widget: "string" }
           - label: "Valdybos nariai"
             name: "valdyba"
             widget: "list"
             field: { label: "Vardas Pavardė", name: "narys", widget: "string" }
           - { label: "Buhalterės telefonas", name: "buhaltere_tel", widget: "string" }
+          - { label: "Mokestinių lapų atsiėmimo info", name: "mokestiniai_lapai", widget: "text" }
           - { label: "Santechniko telefonas", name: "santechnikas_tel", widget: "string" }
           - { label: "Banko sąskaita", name: "banko_saskaita", widget: "string" }
           - { label: "Įmonės kodas", name: "imones_kodas", widget: "string" }
