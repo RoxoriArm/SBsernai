@@ -1,0 +1,39 @@
+title: "Sodininkų bendrija Šernai"
+description: "Bendrijos naujienos, renginiai, šiukšlių išvežimo grafikas ir nuotraukos"
+
+# Kai svetainę talpinate adresu jusu-vardas.github.io (be papildomo katalogo),
+# baseurl turi likti tuščias: ""
+# Jei repozitorijos pavadinimas kitoks (pvz. jusu-vardas.github.io/bendrijos-svetaine),
+# įrašykite: baseurl: "/bendrijos-svetaine"
+baseurl: ""
+url: ""
+
+collections:
+  news:
+    output: true
+    permalink: /naujienos/:name/
+  events:
+    output: true
+    permalink: /renginiai/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "news-item"
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event-item"
+
+exclude:
+  - README.md
+  - INSTRUKCIJOS.md
+  - Gemfile
+  - Gemfile.lock

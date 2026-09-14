@@ -1,0 +1,17 @@
+<header class="site-header">
+  <a class="site-brand" href="{{ '/' | relative_url }}">
+    <svg class="site-brand__icon" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true">
+      <path d="M24 5C16 12 11 20 11 27c0 7.7 5.8 14 13 14s13-6.3 13-14c0-7-5-15-13-22z" fill="#3B5D3A"/>
+      <path d="M24 16c0 6-4 8-7 10" stroke="#EDEFE2" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      <path d="M24 16c0 6 4 8 7 10" stroke="#EDEFE2" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      <line x1="24" y1="16" x2="24" y2="38" stroke="#EDEFE2" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <span>{{ site.title }}</span>
+  </a>
+  <nav class="site-nav" aria-label="Pagrindinė navigacija">
+    <a href="{{ '/naujienos.html' | relative_url }}">Naujienos</a>
+    <a href="{{ '/renginiai.html' | relative_url }}">Renginiai</a>
+    <a href="{{ '/tvarkarastis.html' | relative_url }}">Tvarkaraštis</a>
+    <a href="{{ '/galerija.html' | relative_url }}">Galerija</a>
+  </nav>
+</header>

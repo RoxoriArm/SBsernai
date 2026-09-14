@@ -1,0 +1,9 @@
+irasai:
+  - atlieku_rusis: "Mišrios komunalinės atliekos"
+    grafikas: "Kas antrą trečiadienį"
+  - atlieku_rusis: "Popierius ir kartonas"
+    grafikas: "Kiekvieno mėnesio pirmą penktadienį"
+  - atlieku_rusis: "Plastikas ir pakuotės"
+    grafikas: "Kiekvieno mėnesio trečią penktadienį"
+  - atlieku_rusis: "Stiklas"
+    grafikas: "Kartą per ketvirtį"

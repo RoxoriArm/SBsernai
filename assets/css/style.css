@@ -1,0 +1,344 @@
+/* ==========================================================================
+   Kintamieji
+   ========================================================================== */
+:root {
+  --color-bg: #F1F2E9;
+  --color-bg-alt: #E7E9DA;
+  --color-surface: #FBFBF5;
+  --color-ink: #232B1C;
+  --color-ink-soft: #4B5442;
+  --color-primary: #3B5D3A;
+  --color-primary-dark: #2C4629;
+  --color-accent: #C98A2C;
+  --color-line: #C7CDB2;
+
+  --font-heading: "Bitter", Georgia, serif;
+  --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --max-width: 760px;
+  --radius: 6px;
+}
+
+/* ==========================================================================
+   Bazė
+   ========================================================================== */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary-dark);
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: 2.1rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.15rem; margin-bottom: 0.25em; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--color-primary-dark);
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 3px;
+}
+
+a:hover { color: var(--color-accent); }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ==========================================================================
+   Antraštė
+   ========================================================================== */
+.site-header {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+.site-nav a {
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-ink-soft);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.site-nav a:hover {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Pagrindinė sritis / skiltys
+   ========================================================================== */
+.site-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.section {
+  max-width: var(--max-width);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.section:first-of-type { border-top: none; }
+
+.section--alt { }
+
+.empty-note {
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Herojinė sritis
+   ========================================================================== */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.hero__text { flex: 1 1 320px; }
+
+.hero__tagline {
+  font-size: 1.1rem;
+  color: var(--color-ink-soft);
+  max-width: 44ch;
+}
+
+.hero__art {
+  flex: 1 1 260px;
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Naujienų / renginių sąrašai
+   ========================================================================== */
+.post-list, .event-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.post-item {
+  padding: 1.1rem 0;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.post-item:last-child { border-bottom: none; }
+
+.post-date {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.2em;
+}
+
+.event-item {
+  display: flex;
+  gap: 1.1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.event-item:last-child { border-bottom: none; }
+
+.event-date {
+  flex: 0 0 60px;
+  text-align: center;
+  background: var(--color-primary);
+  color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.25rem;
+  height: fit-content;
+}
+
+.event-day {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.event-month {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.event-place {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+  margin: 0 0 0.4em;
+}
+
+.link-more {
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 1px;
+}
+
+/* ==========================================================================
+   Greitosios nuorodos
+   ========================================================================== */
+.quicklinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: var(--max-width);
+  padding: 2rem 0 3rem;
+}
+
+.quicklink {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.quicklink:hover { border-left-color: var(--color-primary); }
+
+.quicklink p { margin: 0; color: var(--color-ink-soft); font-size: 0.95rem; }
+
+/* ==========================================================================
+   Vienas įrašas
+   ========================================================================== */
+.single-post .post-content { margin-top: 1.25rem; }
+
+/* ==========================================================================
+   Grafiko lentelė
+   ========================================================================== */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+}
+
+.schedule-table th,
+.schedule-table td {
+  text-align: left;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.schedule-table th {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.schedule-table tr:nth-child(even) td { background: var(--color-bg-alt); }
+
+/* ==========================================================================
+   Galerija
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.gallery-item {
+  margin: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery-item figcaption {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+/* ==========================================================================
+   Poraštė
+   ========================================================================== */
+.site-footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.site-footer p { margin: 0.2em 0; }
+
+/* ==========================================================================
+   Mobilieji ekranai
+   ========================================================================== */
+@media (max-width: 600px) {
+  h1 { font-size: 1.7rem; }
+  .hero { padding-top: 1.5rem; }
+  .event-item { gap: 0.8rem; }
+}

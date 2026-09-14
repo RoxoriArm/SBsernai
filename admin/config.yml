@@ -1,0 +1,61 @@
+backend:
+  name: github
+  # SVARBU: pakeiskite žemiau į savo GitHub vartotojo vardą ir repozitorijos pavadinimą,
+  # pvz. "jonas-petraitis/jonas-petraitis.github.io"
+  repo: JUSU-VARDAS/JUSU-REPOZITORIJA
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "news"
+    label: "Naujienos"
+    label_singular: "Naujiena"
+    folder: "_news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Pavadinimas", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Turinys", name: "body", widget: "markdown" }
+
+  - name: "events"
+    label: "Renginiai"
+    label_singular: "Renginys"
+    folder: "_events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Pavadinimas", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Vieta", name: "vieta", widget: "string", required: false }
+      - { label: "Aprašymas", name: "body", widget: "markdown" }
+
+  - name: "tvarkarastis"
+    label: "Šiukšlių grafikas"
+    files:
+      - name: "grafikas"
+        label: "Grafikas"
+        file: "_data/tvarkarastis.yml"
+        fields:
+          - label: "Eilutės"
+            name: "irasai"
+            widget: "list"
+            fields:
+              - { label: "Atliekų rūšis", name: "atlieku_rusis", widget: "string" }
+              - { label: "Grafikas", name: "grafikas", widget: "string" }
+
+  - name: "galerija"
+    label: "Nuotraukų galerija"
+    files:
+      - name: "nuotraukos"
+        label: "Nuotraukos"
+        file: "_data/galerija.yml"
+        fields:
+          - label: "Nuotraukos"
+            name: "nuotraukos"
+            widget: "list"
+            fields:
+              - { label: "Nuotrauka", name: "nuotrauka", widget: "image" }
+              - { label: "Aprašymas", name: "aprasymas", widget: "string", required: false }

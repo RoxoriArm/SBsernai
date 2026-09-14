@@ -1,0 +1,21 @@
+---
+layout: default
+title: Naujienos
+---
+<section class="section">
+  <h1>Naujienos</h1>
+  {% assign naujienos = site.news | sort: 'date' | reverse %}
+  {% if naujienos.size > 0 %}
+  <ul class="post-list">
+    {% for item in naujienos %}
+    <li class="post-item">
+      <span class="post-date">{{ item.date | date: "%Y-%m-%d" }}</span>
+      <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+      <p>{{ item.excerpt | strip_html | truncatewords: 30 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">Naujienų dar nėra.</p>
+  {% endif %}
+</section>

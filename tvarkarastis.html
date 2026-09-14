@@ -1,0 +1,28 @@
+---
+layout: default
+title: Šiukšlių išvežimo grafikas
+---
+<section class="section">
+  <h1>Šiukšlių išvežimo grafikas</h1>
+  {% assign irasai = site.data.tvarkarastis.irasai %}
+  {% if irasai.size > 0 %}
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Atliekų rūšis</th>
+        <th>Išvežimo grafikas</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in irasai %}
+      <tr>
+        <td>{{ row.atlieku_rusis }}</td>
+        <td>{{ row.grafikas }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="empty-note">Grafikas dar nesuvestas.</p>
+  {% endif %}
+</section>

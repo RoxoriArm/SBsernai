@@ -1,0 +1,27 @@
+---
+layout: default
+title: Renginiai
+---
+<section class="section">
+  <h1>Renginiai</h1>
+  {% assign renginiai = site.events | sort: 'date' | reverse %}
+  {% if renginiai.size > 0 %}
+  <ul class="event-list">
+    {% for e in renginiai %}
+    <li class="event-item">
+      <div class="event-date">
+        <span class="event-day">{{ e.date | date: "%d" }}</span>
+        <span class="event-month">{{ e.date | date: "%m" }}</span>
+      </div>
+      <div class="event-body">
+        <h2><a href="{{ e.url | relative_url }}">{{ e.title }}</a></h2>
+        {% if e.vieta %}<p class="event-place">{{ e.vieta }}</p>{% endif %}
+        <p>{{ e.content | strip_html | truncatewords: 24 }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">Renginių dar nėra.</p>
+  {% endif %}
+</section>

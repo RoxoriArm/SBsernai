@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<article class="section single-post">
+  <p class="post-date">{{ page.date | date: "%Y-%m-%d" }}{% if page.vieta %} · {{ page.vieta }}{% endif %}</p>
+  <h1>{{ page.title }}</h1>
+  <div class="post-content">
+    {{ content }}
+  </div>
+  <a class="link-more" href="{{ '/renginiai.html' | relative_url }}">Grįžti į renginius</a>
+</article>
