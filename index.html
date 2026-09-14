@@ -55,10 +55,14 @@ title: Pagrindinis
 
 <section class="section section--alt">
   <h2>Artimiausi renginiai</h2>
-  {% assign renginiai = site.events | where_exp: "e", "e.date | date: '%Y-%m-%d' >= siandien" | sort: 'date' %}
-  {% if renginiai.size > 0 %}
+  {% assign siandien = "now" | date: "%Y-%m-%d" %}
+  {% assign visi_renginiai = site.events | sort: 'date' %}
+  {% assign rodyta = 0 %}
   <ul class="event-list">
-    {% for e in renginiai limit:3 %}
+    {% for e in visi_renginiai %}
+    {% assign e_data = e.date | date: "%Y-%m-%d" %}
+    {% if e_data >= siandien %}
+    {% assign rodyta = rodyta | plus: 1 %}
     <li class="event-item">
       <div class="event-date">
         <span class="event-day">{{ e.date | date: "%d" }}</span>
@@ -70,12 +74,14 @@ title: Pagrindinis
         <p>{{ e.content | strip_html | truncatewords: 20 }}</p>
       </div>
     </li>
+    {% if rodyta == 3 %}{% break %}{% endif %}
+    {% endif %}
     {% endfor %}
   </ul>
-  <a class="link-more" href="{{ '/renginiai.html' | relative_url }}">Visi renginiai</a>
-  {% else %}
+  {% if rodyta == 0 %}
   <p class="empty-note">Artimiausių renginių dar nėra.</p>
   {% endif %}
+  <a class="link-more" href="{{ '/renginiai.html' | relative_url }}">Visi renginiai</a>
 </section>
 
 <section class="quicklinks">
