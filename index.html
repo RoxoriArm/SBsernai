@@ -55,8 +55,7 @@ title: Pagrindinis
 
 <section class="section section--alt">
   <h2>Artimiausi renginiai</h2>
-  {% assign siandien = "now" | date: "%Y-%m-%d" %}
-  {% assign renginiai = site.events | where_exp: "e", "e.date >= siandien" | sort: 'date' %}
+  {% assign renginiai = site.events | where_exp: "e", "e.date | date: '%Y-%m-%d' >= siandien" | sort: 'date' %}
   {% if renginiai.size > 0 %}
   <ul class="event-list">
     {% for e in renginiai limit:3 %}
