@@ -48,6 +48,8 @@ h1, h2, h3 {
   margin: 0 0 0.5em;
 }
 
+.section h2:not(:first-child) { margin-top: 1.75rem; }
+
 h1 { font-size: 2.1rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.15rem; margin-bottom: 0.25em; }
@@ -318,6 +320,35 @@ img { max-width: 100%; display: block; }
   padding: 0.6rem 0.8rem;
   font-size: 0.9rem;
   color: var(--color-ink-soft);
+}
+
+/* ==========================================================================
+   Dokumentų sąrašas
+   ========================================================================== */
+.document-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.document-item {
+  padding: 0.9rem 0;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.document-item:last-child { border-bottom: none; }
+
+.document-item a {
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 1px;
+}
+
+.document-item p {
+  margin: 0.3em 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
 }
 
 /* ==========================================================================

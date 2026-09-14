@@ -46,7 +46,43 @@ collections:
               - { label: "Atliekų rūšis", name: "atlieku_rusis", widget: "string" }
               - { label: "Grafikas", name: "grafikas", widget: "string" }
 
-  - name: "galerija"
+  - name: "dokumentai"
+    label: "Dokumentai"
+    files:
+      - name: "sarasas"
+        label: "Dokumentų sąrašas"
+        file: "_data/dokumentai.yml"
+        fields:
+          - label: "Dokumentai"
+            name: "irasai"
+            widget: "list"
+            fields:
+              - { label: "Pavadinimas", name: "pavadinimas", widget: "string" }
+              - { label: "Aprašymas", name: "aprasymas", widget: "string", required: false }
+              - label: "Failas (PDF)"
+                name: "failas"
+                widget: "file"
+                media_folder: "/assets/documents"
+                public_folder: "/assets/documents"
+
+  - name: "kontaktai"
+    label: "Kontaktai"
+    files:
+      - name: "duomenys"
+        label: "Kontaktinė informacija"
+        file: "_data/kontaktai.yml"
+        fields:
+          - { label: "Pirmininkas (vardas ir telefonas)", name: "pirmininkas", widget: "string" }
+          - label: "Valdybos nariai"
+            name: "valdyba"
+            widget: "list"
+            field: { label: "Vardas Pavardė", name: "narys", widget: "string" }
+          - { label: "Buhalterės telefonas", name: "buhaltere_tel", widget: "string" }
+          - { label: "Santechniko telefonas", name: "santechnikas_tel", widget: "string" }
+          - { label: "Banko sąskaita", name: "banko_saskaita", widget: "string" }
+          - { label: "Įmonės kodas", name: "imones_kodas", widget: "string" }
+          - { label: "El. paštas", name: "epastas", widget: "string" }
+          - { label: "Facebook nuoroda", name: "facebook", widget: "string" }
     label: "Nuotraukų galerija"
     files:
       - name: "nuotraukos"

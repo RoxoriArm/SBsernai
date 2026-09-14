@@ -1,0 +1,21 @@
+---
+layout: default
+title: Dokumentai
+---
+<section class="section">
+  <h1>Dokumentai</h1>
+  <p>Bendrijos raštai, taisyklės ir kita informacinė medžiaga PDF formatu.</p>
+  {% assign dokumentai = site.data.dokumentai.irasai %}
+  {% if dokumentai.size > 0 %}
+  <ul class="document-list">
+    {% for d in dokumentai %}
+    <li class="document-item">
+      <a href="{{ d.failas | relative_url }}" target="_blank" rel="noopener">{{ d.pavadinimas }}</a>
+      {% if d.aprasymas %}<p>{{ d.aprasymas }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">Dokumentų dar nėra.</p>
+  {% endif %}
+</section>

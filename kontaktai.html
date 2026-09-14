@@ -1,0 +1,33 @@
+---
+layout: default
+title: Kontaktai
+---
+<section class="section">
+  <h1>Kontaktai</h1>
+
+  <h2>Valdybos pirmininkas</h2>
+  <p>{{ site.data.kontaktai.pirmininkas }}</p>
+
+  <h2>Valdyba</h2>
+  <p>
+    {% for narys in site.data.kontaktai.valdyba %}{{ narys }}<br>{% endfor %}
+  </p>
+
+  <h2>Buhalterė</h2>
+  <p>Mob. tel. {{ site.data.kontaktai.buhaltere_tel }}</p>
+
+  <h2>Santechnikas</h2>
+  <p>Mob. tel. {{ site.data.kontaktai.santechnikas_tel }}</p>
+
+  <h2>Rekvizitai</h2>
+  <p>
+    Bendrijos banko sąskaita: {{ site.data.kontaktai.banko_saskaita }}<br>
+    Juridinio asmens kodas: {{ site.data.kontaktai.imones_kodas }}
+  </p>
+
+  <h2>El. paštas ir socialiniai tinklai</h2>
+  <p>
+    El. paštas: <a href="mailto:{{ site.data.kontaktai.epastas }}">{{ site.data.kontaktai.epastas }}</a><br>
+    Facebook: <a href="{{ site.data.kontaktai.facebook }}" target="_blank" rel="noopener">Sodininkų bendrija Šernai</a>
+  </p>
+</section>
