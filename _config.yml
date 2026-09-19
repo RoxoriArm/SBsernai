@@ -6,7 +6,7 @@ description: "Bendrijos naujienos, renginiai, šiukšlių išvežimo grafikas ir
 # Jei repozitorijos pavadinimas kitoks (pvz. jusu-vardas.github.io/bendrijos-svetaine),
 # įrašykite: baseurl: "/bendrijos-svetaine"
 baseurl: "/SBsernai"
-url: ""
+url: "https://roxoriarm.github.io"
 
 collections:
   news:
