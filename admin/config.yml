@@ -102,6 +102,8 @@ collections:
           - { label: "Įmonės kodas", name: "imones_kodas", widget: "string" }
           - { label: "El. paštas", name: "epastas", widget: "string" }
           - { label: "Facebook nuoroda", name: "facebook", widget: "string" }
+
+  - name: "galerija"
     label: "Nuotraukų galerija"
     files:
       - name: "nuotraukos"
