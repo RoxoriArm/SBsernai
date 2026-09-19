@@ -2,7 +2,7 @@ backend:
   name: github
   # SVARBU: pakeiskite žemiau į savo GitHub vartotojo vardą ir repozitorijos pavadinimą,
   # pvz. "jonas-petraitis/jonas-petraitis.github.io"
-  repo: JUSU-VARDAS/JUSU-REPOZITORIJA
+  repo: RoxoriArm/SBsernai
   branch: main
 
 media_folder: "assets/images/uploads"
